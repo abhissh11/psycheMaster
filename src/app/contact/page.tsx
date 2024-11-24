@@ -1,9 +1,5 @@
 import React from "react";
 
-export default function () {
-  return (
-    <div>
-      <h1>Contact Page - PsycheMaster </h1>
-    </div>
-  );
+export default function page() {
+  return <div>page</div>;
 }

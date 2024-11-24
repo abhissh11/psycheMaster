@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function () {
-  return <div>Service Page - Psyche</div>;
+export default function page() {
+  return <div>page</div>;
 }
