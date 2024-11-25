@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import GradualSpacing from "./ui/gradual-spacing";
 
 export default function Hero() {
   return (
-    <div className="relative flex  md:h-screen h-[70svh]  overflow-hidden rounded-lg border bg-background md:shadow-xl">
+    <div className="relative flex h-[70svh] sm:h-[50svh] md:h-[50svh] lg:h-[50vh] xl:h-screen overflow-hidden rounded-lg bg-background ">
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
@@ -43,10 +44,13 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black opacity-70"></div>
 
         {/* Content */}
-        <div className="relative z-10 gap-6 flex flex-col items-center justify-center h-full text-white">
-          <h3 className="text-2xl font-sans text-pink-50  font-semibold">
-            --- welcome to psycheMaster
-          </h3>
+        <div className="pt-20 relative z-10 gap-6 flex flex-col items-center justify-center h-full text-white">
+          <GradualSpacing
+            className="md:text-2xl text-xl font-normal text-pink-100"
+            duration={0.2}
+            delayMultiple={0.05}
+            text="welcome to PsycheMaster"
+          />
           <h1 className="text-4xl leading-relaxed md:text-7xl  font-lora text-pink-50 ">
             Healthy Mind
             <br />

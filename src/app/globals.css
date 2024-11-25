@@ -16,6 +16,8 @@
 body {
   background-color: var(--primary-bg);
   color: var(--primary-text);
+  margin: 0;
+  padding: 0;
 }
 
 h1,
