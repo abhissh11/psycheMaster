@@ -1,5 +1,6 @@
 "use client";
 import { AlignRight, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -46,17 +47,24 @@ export default function Header() {
       } top-0 z-20 w-full transition-all`}
     >
       {/* Desktop Navigation */}
-      <div className="hidden md:block">
-        <div className="flex justify-between px-10 py-6 ">
+      <div className="hidden lg:block">
+        <div className="flex  justify-between px-10 py-6 ">
           <h1
             className={`${
               isScrolled || showMenu
-                ? " text-pink-600"
-                : " text-pink-100 font-semibold"
-            } font-lora text-2xl font-semibold tracking-wider`}
+                ? " text-indigo-600"
+                : " text-white font-semibold"
+            } font-serif font-semibold tracking-wider flex items-center gap-3`}
           >
-            psycheMaster
+            <Image
+              src="/images/brand-logo.png"
+              width={40}
+              height={40}
+              alt="Picture of the author"
+            />
+            <span>psycheMaster</span>
           </h1>
+
           <nav>
             <ul className="flex gap-8 items-center">
               {navList.map((list) => (
@@ -64,35 +72,42 @@ export default function Header() {
                   <li
                     className={`${
                       isScrolled || showMenu
-                        ? " text-pink-500"
-                        : " text-pink-100 font-normal"
-                    } text-xl cursor-pointer`}
+                        ? " text-indigo-600"
+                        : " text-white font-normal"
+                    } text-xl cursor-pointer py-1 relative group`}
                   >
                     {list.name}
+                    <span className="absolute left-0 bottom-0 h-[2px] w-full bg-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                   </li>
                 </Link>
               ))}
             </ul>
           </nav>
-          <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded">
+          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 max-h-12 rounded">
             Book Appointment
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <div className="flex py-5 justify-between px-6 ">
           <h1
             className={`${
               isScrolled || showMenu
-                ? " text-pink-600"
-                : " text-pink-100 font-semibold"
-            } "text-2xl"`}
+                ? " text-indigo-600"
+                : " text-white font-semibold"
+            } font-serif font-semibold tracking-wider flex items-center gap-3`}
           >
-            psycheMaster
+            <Image
+              src="/images/brand-logo.png"
+              width={40}
+              height={40}
+              alt="Picture of the author"
+            />
+            <span>psycheMaster</span>
           </h1>
-          <div className="bg-pink-500 rounded-xl p-2">
+          <div className="bg-indigo-600  text-white rounded-xl p-3">
             {showMenu ? (
               <X onClick={menuhandler} />
             ) : (
@@ -108,16 +123,17 @@ export default function Header() {
                   <li
                     className={`${
                       isScrolled || showMenu
-                        ? " text-pink-600"
-                        : " text-pink-100 font-semibold"
-                    } text-xl cursor-pointer`}
+                        ? " text-indigo-600"
+                        : " text-white font-semibold"
+                    } text-xl cursor-pointer relative group`}
                   >
                     {list.name}
+                    <span className="absolute left-0 bottom-0 h-[3px] w-full bg-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                   </li>
                 </Link>
               ))}
             </ul>
-            <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded">
               Book Appointment
             </button>
           </nav>

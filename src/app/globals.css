@@ -4,13 +4,13 @@
 
 /* styles/globals.css */
 :root {
-  --primary-bg: #fff5f7; /* Light pink */
+  --primary-bg: #eff6ff; /* Light blue */
   --secondary-bg: #ffffff; /* White */
-  --primary-text: #1f2937; /* Dark gray */
-  --secondary-text: #4b5563; /* Muted gray */
-  --heading-color: #831843; /* Deep pink */
-  --link-color: #db2777; /* Medium pink */
-  --link-hover-color: #be185d; /* Darker pink */
+  --primary-text: #1e3a8a; /* Navy blue */
+  --secondary-text: #3b82f6; /* Bright blue */
+  --heading-color: #1d4ed8; /* Medium blue */
+  --link-color: #2563eb; /* Slightly darker medium blue */
+  /* --link-hover-color: #93c5fd; Lighter blue for hover */
 }
 
 body {
@@ -31,10 +31,10 @@ li {
   color: var(--link-color);
 }
 
-a:hover,
+/* a:hover,
 li:hover {
   color: var(--link-hover-color);
-}
+} */
 
 @keyframes fade {
   0%,
