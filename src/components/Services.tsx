@@ -5,7 +5,7 @@ export default function Services() {
     <div className="h-screen my-10 ">
       <div className="flex flex-col justify-center items-center">
         <h3>AFFORDABLE SERVICES</h3>
-        <h1>Specialists psychology consultation service</h1>
+        <h1>Specialists psychology</h1>
       </div>
     </div>
   );
