@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import GradualSpacing from "./ui/gradual-spacing";
 
 export default function Hero() {
   return (
