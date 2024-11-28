@@ -49,21 +49,24 @@ export default function Header() {
       {/* Desktop Navigation */}
       <div className="hidden lg:block">
         <div className="flex  justify-between px-10 py-6 ">
-          <h1
-            className={`${
-              isScrolled || showMenu
-                ? " text-indigo-600"
-                : " text-white font-semibold"
-            } font-serif font-semibold tracking-wider flex items-center gap-3`}
-          >
-            <Image
-              src="/images/brand-logo.png"
-              width={40}
-              height={40}
-              alt="Picture of the author"
-            />
-            <span>psycheMaster</span>
-          </h1>
+          <Link href="/">
+            <h1
+              className={`${
+                isScrolled || showMenu
+                  ? " text-indigo-700"
+                  : " text-white font-semibold"
+              } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
+            >
+              <Image
+                src="/images/logo-PsycheMaster.png"
+                width={50}
+                height={50}
+                alt="Picture of the author"
+                className="rounded-full"
+              />
+              <span>PsycheMaster</span>
+            </h1>
+          </Link>
 
           <nav>
             <ul className="flex gap-8 items-center">
@@ -97,17 +100,18 @@ export default function Header() {
               isScrolled || showMenu
                 ? " text-indigo-600"
                 : " text-white font-semibold"
-            } font-serif font-semibold tracking-wider flex items-center gap-3`}
+            } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
           >
             <Image
-              src="/images/brand-logo.png"
-              width={40}
-              height={40}
+              src="/images/logo-Psychemaster.png"
+              width={50}
+              height={50}
               alt="Picture of the author"
+              className="rounded-full"
             />
-            <span>psycheMaster</span>
+            <span>PsycheMaster</span>
           </h1>
-          <div className="bg-indigo-600  text-white rounded-xl p-3">
+          <div className="bg-indigo-600  text-white rounded-xl p-3 cursor-pointer">
             {showMenu ? (
               <X onClick={menuhandler} />
             ) : (
@@ -116,7 +120,10 @@ export default function Header() {
           </div>
         </div>
         {showMenu && (
-          <nav className="flex items-center flex-col gap-10 pb-10 bg-pink-50 overflow-x-hidden">
+          <nav
+            data-aos="zoom-in-down"
+            className="flex items-center flex-col gap-10 pb-10 bg-indigo-100 overflow-x-hidden"
+          >
             <ul className="flex flex-col mt-10 gap-8 items-center">
               {navList.map((list) => (
                 <Link key={list.name} href={list.href}>

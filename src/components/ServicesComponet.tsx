@@ -32,11 +32,11 @@ export default function ServicesComponet() {
   return (
     <div className="min-h-[50vh] max-w-[100vw] bg-indigo-100 px-4 md:px-10 lg:px-10 py-20 overflow-hidden">
       <div className="flex flex-col gap-10 justify-center items-center">
-        <h3 className="text-xl text-center font-semibold text-gray-700">
-          AFFORDABLE SERVICES
-        </h3>
-        <h1 className="text-3xl text-center font-bold font-serif tracking-normal leading-normal">
-          Specialists psychology consultation service
+        <h1 className="text-3xl flex gap-4 items-center font-normal font-mono text-center">
+          Affordable Services
+        </h1>
+        <h1 className="text-2xl md:text-3xl lg:text-6xl font-normal font-serif text-yellow-900 tracking-wide leading-snug text-center">
+          Specialists psychology <br /> consultation service
         </h1>
       </div>
       <div className="sm:my-30 my-20 flex flex-wrap gap-10 justify-center">

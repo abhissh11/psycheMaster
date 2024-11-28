@@ -50,15 +50,22 @@ export default function Hero() {
             delayMultiple={0.05}
             text="welcome to PsycheMaster"
           /> */}
-          <h1 className="text-4xl leading-relaxed md:text-6xl  font-serif font-bold text-pink-50 ">
-            Healthy Mind
+          <h1 className="text-4xl leading-relaxed md:text-6xl  font-serif font-bold text-center text-pink-50 ">
+            Mindful Living
             <br />
-            <span className="my-10 md:pl-40">Healthy Living</span>{" "}
+            <span className="my-10 text-center ">
+              Flourishing Together
+            </span>{" "}
           </h1>
           <p className="max-w-[40rem] font-sans text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quam
-            iure, voluptates asperiores quisquam provident hic recusandae natus,
-            atque eaque sunt minima?
+            Personalized counseling to help you navigate life's challenges with
+            clarity and confidence.
+            <br />
+            Start Your Healing Journey Today! Schedule Your{" "}
+            <span className="font-serif tracking-wide font-semibold bg-yellow-950 px-2">
+              Free Session
+            </span>{" "}
+            Now!
           </p>
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 max-h-12 rounded">
             Book Appointment

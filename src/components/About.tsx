@@ -25,16 +25,16 @@ export default function About() {
           <h1 className="text-3xl font-normal font-mono text-center lg:text-left">
             About Us
           </h1>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal font-serif text-yellow-700 tracking-wide leading-snug text-center lg:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal font-serif text-yellow-900 tracking-wide leading-snug text-center lg:text-left">
             We are the leading advisory center for you
           </h1>
-          <p className="text-base md:text-lg font-light text-center lg:text-left">
+          <p className="md:text-lg text-sm text-gray-700 font-normal text-center lg:text-left">
             Our clinic is the largest private mental health partnership, with a
             carefully selected nationwide team of Psychiatrists, Psychologists,
             and Psychotherapists. We only work with highly experienced and
             capable partners who share our values.
           </p>
-          <p className="text-base md:text-lg font-light text-center lg:text-left">
+          <p className="text-sm md:text-lg text-gray-700 font-normal text-center lg:text-left">
             Vitae suscipit tellus mauris a diam maecenas sed. Volutpat consequat
             mauris nunc congue nisi vitae suscipit tellus.
           </p>
