@@ -116,7 +116,7 @@ export default function Header() {
           </div>
         </div>
         {showMenu && (
-          <nav className="flex items-center flex-col gap-10 pb-10 bg-pink-50">
+          <nav className="flex items-center flex-col gap-10 pb-10 bg-pink-50 overflow-x-hidden">
             <ul className="flex flex-col mt-10 gap-8 items-center">
               {navList.map((list) => (
                 <Link key={list.name} href={list.href}>

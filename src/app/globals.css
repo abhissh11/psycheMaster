@@ -12,12 +12,19 @@
   --link-color: #2563eb; /* Slightly darker medium blue */
   /* --link-hover-color: #93c5fd; Lighter blue for hover */
 }
+html {
+  overflow-x: hidden;
+}
 
 body {
   background-color: var(--primary-bg);
   color: var(--primary-text);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+[data-aos] {
+  overflow-x: hidden;
 }
 
 h1,

@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 
 export default function Hero() {
   return (
-    <div className="relative flex lg:h-screen h-[80svh] flex-wrap overflow-hidden rounded-lg bg-background ">
+    <div className="relative flex lg:h-screen h-[80svh] flex-wrap overflow-hidden w-full bg-background ">
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
