@@ -58,8 +58,8 @@ export default function Hero() {
             </span>{" "}
           </h1>
           <p className="max-w-[40rem] font-sans text-center">
-            Personalized counseling to help you navigate life's challenges with
-            clarity and confidence.
+            Personalized counseling to help you navigate life&aposs challenges
+            with clarity and confidence.
             <br />
             Start Your Healing Journey Today! Schedule Your{" "}
             <span className="font-serif tracking-wide font-semibold bg-yellow-950 px-2">
