@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Lora } from "next/font/google";
+import AOSProvider from "@/components/AosProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,8 +39,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased`}
       >
         <>
-          <Header />
-          {children}
+          <AOSProvider>
+            <Header />
+            {children}
+          </AOSProvider>
         </>
       </body>
     </html>

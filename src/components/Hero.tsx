@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-cover bg-center animate-slide2"></div>
         <div className="absolute inset-0 bg-cover bg-center animate-slide3"></div>
         {/* overlay */}
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
 
         {/* Content */}
         <div className=" relative z-10 gap-10 flex flex-col m-5 items-center justify-center  h-full text-white">
