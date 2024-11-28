@@ -42,7 +42,7 @@ export default function Header() {
     <div
       className={`${
         isScrolled || showMenu
-          ? "sticky bg-white shadow-md"
+          ? "fixed bg-white shadow-md"
           : "absolute bg-transparent"
       } top-0 z-20 w-full transition-all`}
     >
