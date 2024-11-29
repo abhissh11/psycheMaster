@@ -4,10 +4,10 @@ import bcrypt from 'bcrypt'
 import { generateJWTToken } from "@/lib/jwt";
 
 
-interface signinBody {
-    email: string;
-    password: string;
-}
+// interface signinBody {
+//     email: string;
+//     password: string;
+// }
 
 export async function POST(req: NextRequest) {
     const body = await req.json();

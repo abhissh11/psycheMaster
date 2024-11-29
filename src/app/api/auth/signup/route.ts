@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from 'bcrypt'
 
 
-interface SignupBody {
-    email: string;
-    password: string;
-}
+// interface SignupBody {
+//     email: string;
+//     password: string;
+// }
 
 export async function POST(req: NextRequest) {
     const body = await req.json();
