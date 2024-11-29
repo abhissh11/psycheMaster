@@ -1,7 +1,7 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, Db } from 'mongodb';
 
 let cachedClient: MongoClient | null = null;
-let cachedDb: any = null;
+let cachedDb: Db | null = null;
 
 if (!process.env.MONGODB_URI) {
     throw new Error('Please define the MONGODB_URI environment variable');

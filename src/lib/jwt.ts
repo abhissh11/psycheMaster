@@ -21,9 +21,9 @@ export function generateJWTToken(userId: string): string {
 export function verifyJWTToken(token: string): TokenPayload {
     try {
         const decoded = jwt.verify(token, JWT_SECRET) as JwtPayload & TokenPayload;
-        return { userId: decoded.userId }; // Ensure `userId` is always returned as part of the payload
-    } catch (error: any) {
-        console.error('JWT verification error:', error.message);
+        return { userId: decoded.userId };
+    } catch (error: unknown) {
+        console.error('JWT verification error:', (error as Error).message);
 
         // Re-throw the error with a user-friendly message
         if (error instanceof jwt.TokenExpiredError) {

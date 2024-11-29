@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         }
 
         //jwt token
-        const token = generateJWTToken(user._id);
+        const token = generateJWTToken(user._id.toString());
 
         return NextResponse.json(
             { message: 'Signed in successfully', token },
