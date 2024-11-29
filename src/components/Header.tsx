@@ -61,7 +61,7 @@ export default function Header() {
                 src="/images/logo-PsycheMaster.png"
                 width={50}
                 height={50}
-                alt="Picture of the author"
+                alt="logo"
                 className="rounded-full"
               />
               <span>PsycheMaster</span>
@@ -103,15 +103,15 @@ export default function Header() {
             } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
           >
             <Image
-              src="/images/logo-Psychemaster.png"
+              src="/images/logo-PsycheMaster.png"
               width={50}
               height={50}
-              alt="Picture of the author"
+              alt="logo"
               className="rounded-full"
             />
             <span>PsycheMaster</span>
           </h1>
-          <div className="bg-indigo-600  text-white rounded-xl p-3 cursor-pointer">
+          <div className="bg-indigo-600  text-white rounded-xl p-3 max-h-12 cursor-pointer">
             {showMenu ? (
               <X onClick={menuhandler} />
             ) : (
