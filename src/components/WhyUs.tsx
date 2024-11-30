@@ -10,7 +10,10 @@ import React from "react";
 
 export default function WhyUs() {
   return (
-    <div className="min-h-screen  bg-white px-4 md:px-10 lg:px-20 py-10 md:py-20">
+    <div
+      className="min-h-screen bg-white px-4 md:px-10 lg:px-20 py-10 md:py-20 
+    flex flex-col gap-10 items-center"
+    >
       <div className="flex flex-col-reverse sm:flex-row justify-around items-center">
         <div className="max-w-[36rem] flex flex-col gap-12">
           <h1 className="text-3xl font-normal font-mono text-center md:text-start">
@@ -20,7 +23,7 @@ export default function WhyUs() {
             <h1 className="text-4xl md:text-5xl lg:text-5xl  md:text-start text-center font-normal font-serif text-yellow-900 tracking-wide leading-snug">
               The leading mental health consultation center for you
             </h1>
-            <p className="md:text-lg text-sm text-gray-700 font-normal text-center lg:text-left">
+            <p className="text-xs md:text-sm text-gray-700 font-normal text-center lg:text-left">
               No one should face epilepsy alone. Our epilepsy services are for
               everyone, with no financial barriers - just compassionate care.
             </p>
@@ -36,7 +39,7 @@ export default function WhyUs() {
           />
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row justify-around ">
+      <div className="flex flex-col gap-10 sm:flex-row justify-around items-center">
         <div className=" flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <BookCheck
@@ -73,11 +76,11 @@ export default function WhyUs() {
               className="text-white bg-teal-700 p-2 rounded-full font-bold border-2 "
             />
           </div>
-          <div className="flex flex-col items-start justify-around">
-            <h1 className="text-base font-semibold text-white">
+          <div className="flex flex-col items-start justify-center gap-4 min-h-36">
+            <h1 className="text-sm md:text-base md:font-semibold text-white">
               Break the silence! Epilepsy affects more than just the body.
             </h1>
-            <button className="flex gap-1 text-lg items-center group">
+            <button className="flex gap-1 text-sm md:text-lg items-center group ">
               Book Your Session Now
               <span className="group-hover:translate-x-4 transition-all duration-100">
                 <ChevronRight />
