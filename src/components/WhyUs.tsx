@@ -23,9 +23,9 @@ export default function WhyUs() {
             <h1 className="text-4xl md:text-5xl lg:text-5xl  md:text-start text-center font-normal font-serif text-yellow-900 tracking-wide leading-snug">
               The leading mental health consultation center for you
             </h1>
-            <p className="text-xs md:text-sm text-gray-700 font-normal text-center lg:text-left">
+            <p className="text-xs md:text-sm text-gray-900 font-normal text-center lg:text-left">
               No one should face epilepsy alone. Our epilepsy services are for
-              everyone, with no financial barriers - just compassionate care.
+              everyone <br /> No financial barriers - just compassionate care.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function WhyUs() {
           <div className="border-r-2 pr-4">
             <Brain
               size={60}
-              className="text-white bg-teal-700 p-2 rounded-full font-bold border-2 "
+              className="text-white bg-indigo-800 p-2 rounded-full font-bold border-2 "
             />
           </div>
           <div className="flex flex-col items-start justify-center gap-4 min-h-36">

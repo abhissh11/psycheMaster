@@ -30,12 +30,12 @@ export default function About() {
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-normal font-serif text-yellow-900 tracking-wide leading-snug text-center lg:text-left">
             We are a Team of Certified Counselors Working around Epilepsy
           </h1>
-          <p className="text-xs md:text-sm text-gray-700 font-normal text-center lg:text-left">
+          <p className="text-xs md:text-sm text-gray-900 font-normal text-center lg:text-left">
             Our team consists of certified and experienced counselors who are
             passionate about making a difference in the lives of those
             navigating the unique challenges associated with this condition.
           </p>
-          <p className="text-xs md:text-sm text-gray-700 font-normal text-center lg:text-left">
+          <p className="text-xs md:text-sm text-gray-900 font-normal text-center lg:text-left">
             We understand that living with epilepsy can often bring emotional,
             social, and psychological hurdles, not just for the individual but
             also for their families and caregivers. From dealing with anxiety
@@ -43,7 +43,7 @@ export default function About() {
             tailored counseling services are designed to provide compassionate
             support every step of the way.
           </p>
-          <p className="text-xs md:text-sm text-gray-700 font-normal text-center lg:text-left">
+          <p className="text-xs md:text-sm text-gray-900 font-normal text-center lg:text-left">
             At our core, we believe that no one should face these challenges
             alone. Let&apos;s work together to nurture mental and emotional
             strength, one step at a time.

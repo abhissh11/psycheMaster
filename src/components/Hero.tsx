@@ -44,18 +44,19 @@ export default function Hero() {
 
         {/* Content */}
         <div className=" relative z-10 gap-10 flex flex-col m-5 items-center justify-center  h-full text-white">
-          <h4 className="md:text-xl font-normal text-white text-wrap text-center">
-            PsycheMasters Epilepsy Support Initiative
-          </h4>
-
           <h1 className="text-3xl leading-loose md:text-4xl  font-serif font-bold text-center text-pink-50 ">
-            Empowering Epilepsy Warriors &amp; <br /> Their Loved Ones
+            PsycheMaster&apos;s Epilepsy <br />
+            Support Initiative
           </h1>
+
+          <h4 className="md:text-xl font-normal text-white text-wrap text-center">
+            Empowering Epilepsy Warriors &amp; <br /> Their Loved Ones
+          </h4>
           <div className="flex flex-col gap-4 items-center">
             <p className="max-w-[40rem] font-sans text-center">
-              Break the silence! Epilepsy affects more than just the body. Our
-              expert team at PsycheMaster offer confidential, compassionate
-              support.
+              Break the silence! <br /> Epilepsy affects more than just the
+              body. Our expert team at PsycheMaster offer confidential,
+              compassionate support.
               <br />
               Reach out today and take the first step towards a stronger,
               more resilient you!

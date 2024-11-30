@@ -74,7 +74,7 @@ export default function Header() {
                     : " text-white font-semibold"
                 } font-serif text-base font-light tracking-wider flex items-center gap-3`}
               >
-                Mindul Living | Flourishing Together
+                Mindful Living | Flourishing Together
               </h3>
             </div>
           </Link>
@@ -131,7 +131,7 @@ export default function Header() {
                     : " text-white font-semibold"
                 } font-serif text-xs md:text-base font-light tracking-wider flex text-center gap-3`}
               >
-                Mindul Living | Flourishing Together
+                Mindful Living | Flourishing Together
               </h3>
             </div>
           </Link>

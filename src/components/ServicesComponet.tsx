@@ -10,23 +10,25 @@ export default function ServicesComponet() {
   const services = [
     {
       icon: <PersonStanding size={48} />,
-      title: "Individual counseling",
-      description: "One to One over your personal challenge",
+      title: "Individual Counseling",
+      description:
+        "One to One session over your personal challenges with Epilepse condition",
     },
     {
       icon: <BrainCircuit size={48} />,
-      title: "Patient Training",
-      description: "personalized training for epilepse patient",
+      title: "Epilepsy Warriors Training",
+      description: "Personalized training for Epilepsy patient",
     },
     {
       icon: <BrainCog size={48} />,
-      title: "Care Giver Training",
-      description: "personalized training for epilepse care giver",
+      title: "Epilepsy Caregivers Training",
+      description: "Personalized training for Epilepsy caregivers",
     },
     {
       icon: <MessageCircleHeart size={48} />,
       title: "Family Training",
-      description: "personalized family training program for epilepse warriors",
+      description:
+        "Personalized family training program for Epilepsy warriors and their loved ones",
     },
   ];
   return (
@@ -51,8 +53,10 @@ export default function ServicesComponet() {
             <h4 className="text-white bg-indigo-600 p-4 rounded-full">
               {sv.icon}
             </h4>
-            <h1 className="text-xl text-indigo-600 font-bold">{sv.title}</h1>
-            <h1 className="text-sm text-gray-700 px-4">{sv.description}</h1>
+            <h1 className="text-xl text-indigo-700 font-bold">{sv.title}</h1>
+            <h1 className="text-sm font-normal text-gray-900 px-4">
+              {sv.description}
+            </h1>
           </div>
         ))}
       </div>
