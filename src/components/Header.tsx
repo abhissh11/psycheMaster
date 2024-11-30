@@ -49,23 +49,34 @@ export default function Header() {
       {/* Desktop Navigation */}
       <div className="hidden lg:block">
         <div className="flex  justify-between px-10 py-6 ">
-          <Link href="/">
-            <h1
-              className={`${
-                isScrolled || showMenu
-                  ? " text-indigo-700"
-                  : " text-white font-semibold"
-              } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
-            >
-              <Image
-                src="/images/logo-PsycheMaster.png"
-                width={50}
-                height={50}
-                alt="logo"
-                className="rounded-full"
-              />
-              <span>PsycheMaster</span>
-            </h1>
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/images/master.png"
+              width={60}
+              height={60}
+              alt="logo"
+              className="rounded-full"
+            />
+            <div className="flex flex-col gap-1 items-center">
+              <h1
+                className={`${
+                  isScrolled || showMenu
+                    ? " text-indigo-700"
+                    : " text-white font-semibold"
+                } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
+              >
+                PsycheMaster
+              </h1>
+              <h3
+                className={`${
+                  isScrolled || showMenu
+                    ? " text-indigo-700"
+                    : " text-white font-semibold"
+                } font-serif text-base font-light tracking-wider flex items-center gap-3`}
+              >
+                Mindul Living | Flourishing Together
+              </h3>
+            </div>
           </Link>
 
           <nav>
@@ -95,22 +106,35 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="lg:hidden">
         <div className="flex py-5 justify-between px-6 ">
-          <h1
-            className={`${
-              isScrolled || showMenu
-                ? " text-indigo-600"
-                : " text-white font-semibold"
-            } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
-          >
+          <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/logo-PsycheMaster.png"
-              width={50}
-              height={50}
+              src="/images/master.png"
+              width={60}
+              height={60}
               alt="logo"
               className="rounded-full"
             />
-            <span>PsycheMaster</span>
-          </h1>
+            <div className="flex flex-col gap-1 items-center">
+              <h1
+                className={`${
+                  isScrolled || showMenu
+                    ? " text-indigo-700"
+                    : " text-white font-semibold"
+                } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
+              >
+                PsycheMaster
+              </h1>
+              <h3
+                className={`${
+                  isScrolled || showMenu
+                    ? " text-indigo-700"
+                    : " text-white font-semibold"
+                } font-serif text-xs md:text-base font-light tracking-wider flex text-center gap-3`}
+              >
+                Mindul Living | Flourishing Together
+              </h3>
+            </div>
+          </Link>
           <div className="bg-indigo-600  text-white rounded-xl p-3 max-h-12 cursor-pointer">
             {showMenu ? (
               <X onClick={menuhandler} />

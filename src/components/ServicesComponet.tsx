@@ -10,23 +10,23 @@ export default function ServicesComponet() {
   const services = [
     {
       icon: <PersonStanding size={48} />,
-      title: "Family counseling",
-      description: "Scelerisque eleifend donec pretium vulputate sapien",
+      title: "Individual counseling",
+      description: "One to One over your personal challenge",
     },
     {
       icon: <BrainCircuit size={48} />,
-      title: "Personal counseling",
-      description: "Scelerisque eleifend donec pretium vulputate sapien",
+      title: "Patient Training",
+      description: "personalized training for epilepse patient",
     },
     {
       icon: <BrainCog size={48} />,
-      title: "Anxiety disorder",
-      description: "Scelerisque eleifend donec pretium vulputate sapien",
+      title: "Care Giver Training",
+      description: "personalized training for epilepse care giver",
     },
     {
       icon: <MessageCircleHeart size={48} />,
-      title: "Dating  & Relation",
-      description: "Scelerisque eleifend donec pretium vulputate sapien",
+      title: "Family Training",
+      description: "personalized family training program for epilepse warriors",
     },
   ];
   return (
@@ -36,7 +36,7 @@ export default function ServicesComponet() {
           Affordable Services
         </h1>
         <h1 className="text-2xl md:text-3xl lg:text-6xl font-normal font-serif text-yellow-900 tracking-wide leading-snug text-center">
-          Specialists psychology <br /> consultation service
+          Our Psychological Support
         </h1>
       </div>
       <div className="sm:my-30 my-20 flex flex-wrap gap-10 justify-center">
@@ -44,6 +44,7 @@ export default function ServicesComponet() {
           <div
             key={sv.title}
             data-aos="fade-right"
+            suppressHydrationWarning={true}
             data-aos-delay="200"
             className="animated-image flex flex-col gap-3 text-center items-center justify-center bg-white w-full md:w-[45%] lg:w-[20%] h-64 rounded-xl cursor-pointer"
           >

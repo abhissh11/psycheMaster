@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 
 export default function Hero() {
   return (
-    <div className="relative flex lg:h-screen h-[80svh] flex-wrap overflow-hidden w-full bg-background ">
+    <div className="relative flex h-screen flex-wrap overflow-hidden w-full bg-background ">
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
@@ -44,32 +44,26 @@ export default function Hero() {
 
         {/* Content */}
         <div className=" relative z-10 gap-10 flex flex-col m-5 items-center justify-center  h-full text-white">
-          {/* <GradualSpacing
-            className="md:text-2xl text-xl font-normal text-pink-100"
-            duration={0.2}
-            delayMultiple={0.05}
-            text="welcome to PsycheMaster"
-          /> */}
-          <h1 className="text-4xl leading-relaxed md:text-6xl  font-serif font-bold text-center text-pink-50 ">
-            Mindful Living
-            <br />
-            <span className="my-10 text-center ">
-              Flourishing Together
-            </span>{" "}
+          <h4 className="md:text-xl font-normal text-white text-wrap text-center">
+            PsycheMasters Epilepsy Support Initiative
+          </h4>
+
+          <h1 className="text-3xl leading-loose md:text-4xl  font-serif font-bold text-center text-pink-50 ">
+            Empowering Epilepsy Warriors &amp; <br /> Their Loved Ones
           </h1>
-          <p className="max-w-[40rem] font-sans text-center">
-            Personalized counseling to help you navigate life&aposs challenges
-            with clarity and confidence.
-            <br />
-            Start Your Healing Journey Today! Schedule Your{" "}
-            <span className="font-serif tracking-wide font-semibold bg-yellow-950 px-2">
-              Free Session
-            </span>{" "}
-            Now!
-          </p>
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 max-h-12 rounded">
-            Book Appointment
-          </button>
+          <div className="flex flex-col gap-4 items-center">
+            <p className="max-w-[40rem] font-sans text-center">
+              Break the silence! Epilepsy affects more than just the body. Our
+              expert team at PsycheMaster offer confidential, compassionate
+              support.
+              <br />
+              Reach out today and take the first step towards a stronger,
+              more resilient you!
+            </p>
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 max-h-12 max-w-44 rounded">
+              Book Appointment
+            </button>
+          </div>
         </div>
       </div>
     </div>
