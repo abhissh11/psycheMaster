@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -61,9 +62,11 @@ export default function Hero() {
               Reach out today and take the first step towards a stronger,
               more resilient you!
             </p>
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 max-h-12 max-w-44 rounded">
-              Book Appointment
-            </button>
+            <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
+              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 max-h-12 max-w-44 rounded">
+                Book Appointment
+              </button>
+            </Link>
           </div>
         </div>
       </div>

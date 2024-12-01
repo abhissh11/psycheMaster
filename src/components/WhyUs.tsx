@@ -69,7 +69,7 @@ export default function WhyUs() {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 items-center bg-gradient-to-tr from-orange-700 to-black opacity-70 text-white px-10">
+        <div className="flex gap-4 items-center bg-gradient-to-tr from-orange-900 to-black opacity-90 text-white px-10">
           <div className="border-r-2 pr-4">
             <Brain
               size={60}

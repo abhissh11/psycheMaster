@@ -97,9 +97,11 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 max-h-12 rounded">
-            Book Appointment
-          </button>
+          <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 max-h-12 rounded">
+              Book Appointment
+            </button>
+          </Link>
         </div>
       </div>
 
