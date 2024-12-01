@@ -69,7 +69,7 @@ export default function Testimonial() {
                   <Card className="border-yellow-950 gray-bg shadow-lg">
                     <CardContent className="flex flex-col gap-4 aspect-square items-center justify-center p-4">
                       <p className="text-base text-gray-200 font-serif font-normal tracking-wide">
-                        "{ack.feedback}"
+                        &quot;{ack.feedback}&quot;
                       </p>
                       <h1 className="text-white text-sm font-serif font-semibold">
                         - {ack.name}
