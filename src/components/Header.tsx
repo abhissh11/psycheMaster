@@ -3,10 +3,13 @@ import { AlignRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathName = usePathname();
+  const isHomePage = pathName === "/";
 
   // Navigation List
   const navList = [
@@ -41,14 +44,14 @@ export default function Header() {
   return (
     <div
       className={`${
-        isScrolled || showMenu
+        isScrolled || showMenu || !isHomePage
           ? "fixed bg-white shadow-md"
           : "absolute bg-transparent"
       } top-0 z-20 w-full transition-all`}
     >
       {/* Desktop Navigation */}
       <div className="hidden lg:block">
-        <div className="flex  justify-between px-10 py-6 ">
+        <div className="flex gap-2 justify-between items-center px-10 py-6 ">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/master.png"
@@ -60,7 +63,7 @@ export default function Header() {
             <div className="flex flex-col gap-1 items-center">
               <h1
                 className={`${
-                  isScrolled || showMenu
+                  isScrolled || showMenu || !isHomePage
                     ? " text-indigo-700"
                     : " text-white font-semibold"
                 } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
@@ -69,9 +72,9 @@ export default function Header() {
               </h1>
               <h3
                 className={`${
-                  isScrolled || showMenu
+                  isScrolled || showMenu || !isHomePage
                     ? " text-indigo-700"
-                    : " text-white font-semibold"
+                    : " text-white font-normal"
                 } font-serif text-base font-light tracking-wider flex items-center gap-3`}
               >
                 Mindful Living | Flourishing Together
@@ -85,7 +88,7 @@ export default function Header() {
                 <Link key={list.name} href={list.href}>
                   <li
                     className={`${
-                      isScrolled || showMenu
+                      isScrolled || showMenu || !isHomePage
                         ? " text-indigo-600"
                         : " text-white font-normal"
                     } text-xl cursor-pointer py-1 relative group`}
@@ -97,11 +100,28 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 max-h-12 rounded">
-              Book Appointment
-            </button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="https://chat.whatsapp.com/KP90vTFesp7J2wjvIDMzpX"
+              target="_blank"
+            >
+              <button
+                className={`${
+                  isScrolled || showMenu || !isHomePage
+                    ? " text-indigo-600 hover:text-white"
+                    : " text-white font-semibold"
+                } px-4 py-3 max-h-13 text-center font-semibold rounded  border-2 border-indigo-600 hover:bg-indigo-600 
+                `}
+              >
+                Join Community
+              </button>
+            </Link>
+            <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
+              <button className="border-2 border-indigo-600 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 max-h-13 rounded">
+                Book Appointment
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -119,7 +139,7 @@ export default function Header() {
             <div className="flex flex-col gap-1 items-center">
               <h1
                 className={`${
-                  isScrolled || showMenu
+                  isScrolled || showMenu || !isHomePage
                     ? " text-indigo-700"
                     : " text-white font-semibold"
                 } font-serif text-xl font-semibold tracking-wider flex items-center gap-3`}
@@ -128,7 +148,7 @@ export default function Header() {
               </h1>
               <h3
                 className={`${
-                  isScrolled || showMenu
+                  isScrolled || showMenu || !isHomePage
                     ? " text-indigo-700"
                     : " text-white font-semibold"
                 } font-serif text-xs md:text-base font-light tracking-wider flex text-center gap-3`}
@@ -154,8 +174,9 @@ export default function Header() {
               {navList.map((list) => (
                 <Link key={list.name} href={list.href}>
                   <li
+                    onClick={menuhandler}
                     className={`${
-                      isScrolled || showMenu
+                      isScrolled || showMenu || !isHomePage
                         ? " text-indigo-600"
                         : " text-white font-semibold"
                     } text-xl cursor-pointer relative group`}
@@ -166,9 +187,28 @@ export default function Header() {
                 </Link>
               ))}
             </ul>
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded">
-              Book Appointment
-            </button>
+            <div className="flex flex-col items-center gap-5">
+              <Link
+                href="https://chat.whatsapp.com/KP90vTFesp7J2wjvIDMzpX"
+                target="_blank"
+              >
+                <button
+                  className={`${
+                    isScrolled || showMenu || !isHomePage
+                      ? " text-indigo-600 hover:text-white"
+                      : " text-white font-semibold"
+                  } px-4 py-3 max-h-13 text-center font-semibold rounded  border-2 border-indigo-600 hover:bg-indigo-600 
+                `}
+                >
+                  Join Community
+                </button>
+              </Link>
+              <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
+                <button className="border-2 border-indigo-600 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 max-h-13 rounded">
+                  Book Appointment
+                </button>
+              </Link>
+            </div>
           </nav>
         )}
       </div>

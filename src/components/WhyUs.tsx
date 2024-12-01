@@ -6,12 +6,13 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function WhyUs() {
   return (
     <div
-      className="min-h-screen bg-white px-4 md:px-10 lg:px-20 py-10 md:py-20 
+      className="min-h-fit bg-white px-4 md:px-10 lg:px-20 py-10 md:py-20 
     flex flex-col gap-10 items-center"
     >
       <div className="flex flex-col-reverse sm:flex-row justify-around items-center">
@@ -47,7 +48,7 @@ export default function WhyUs() {
               className="bg-indigo-600 text-white p-2 font-bold rounded-full"
             />
             <p className="text-base font-semibold">
-              Certified and experienced counselors.
+              Certified and Experienced counselors.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -56,7 +57,7 @@ export default function WhyUs() {
               className="bg-indigo-600 text-white p-2 font-bold rounded-full"
             />
             <p className="text-base font-semibold">
-              Secure and private sessions.
+              Secure and Private sessions.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -80,12 +81,14 @@ export default function WhyUs() {
             <h1 className="text-sm md:text-base md:font-semibold text-white">
               Break the silence! Epilepsy affects more than just the body.
             </h1>
-            <button className="flex gap-1 text-sm md:text-lg items-center group ">
-              Book Your Session Now
-              <span className="group-hover:translate-x-4 transition-all duration-100">
-                <ChevronRight />
-              </span>
-            </button>
+            <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
+              <button className="flex gap-1 text-sm md:text-lg text-white items-center group ">
+                Book Your Session Now
+                <span className="group-hover:translate-x-4 transition-all duration-100">
+                  <ChevronRight />
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
