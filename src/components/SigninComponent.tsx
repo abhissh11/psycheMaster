@@ -55,7 +55,8 @@ export default function AdminSignin() {
         toast.error(data.message || data.error || "Signin failed.");
       }
     } catch (err) {
-      toast.error("An unexpected error occurred.");
+      console.error("Error during signin:", err);
+      toast.error(`An unexpected error occurred.`);
     }
   };
 
