@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Counselors from "@/components/Counselors";
+import Faqs from "@/components/Faqs";
 import Hero from "@/components/Hero";
 import ServicesComponet from "@/components/ServicesComponet";
 import Testimonial from "@/components/Testimonial";
@@ -16,6 +17,7 @@ export default function Home() {
         <WhyUs />
         <Testimonial />
         <Counselors />
+        <Faqs />
       </main>
     </div>
   );
