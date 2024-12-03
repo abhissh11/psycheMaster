@@ -13,7 +13,7 @@ export default function Faqs() {
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Image Section */}
         <div className="gray-bg flex justify-center items-center flex-grow-0 flex-shrink-0">
-          <div className="w-[500px] h-[500px] md:h-[600px]">
+          <div className="w-full md:[580x] lg:w-[630px] ">
             <Image
               src="/images/soulpuzzle.jpg"
               width={500}
