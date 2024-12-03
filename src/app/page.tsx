@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Counselors from "@/components/Counselors";
 import Hero from "@/components/Hero";
 import ServicesComponet from "@/components/ServicesComponet";
 import Testimonial from "@/components/Testimonial";
@@ -14,6 +15,7 @@ export default function Home() {
         <ServicesComponet />
         <WhyUs />
         <Testimonial />
+        <Counselors />
       </main>
     </div>
   );

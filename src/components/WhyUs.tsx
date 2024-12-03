@@ -12,7 +12,7 @@ import React from "react";
 export default function WhyUs() {
   return (
     <div
-      className="min-h-fit bg-white px-4 md:px-10 lg:px-20 py-10 md:py-20 
+      className="min-h-fit bg-indigo-50 px-4 md:px-10 lg:px-20 py-10 md:py-20 
     flex flex-col gap-10 items-center"
     >
       <div className="flex flex-col-reverse sm:flex-row justify-around items-center">
@@ -20,7 +20,12 @@ export default function WhyUs() {
           <h1 className="text-3xl font-normal font-mono text-center md:text-start">
             Why Choose us
           </h1>
-          <div className="flex flex-col gap-2 ">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            suppressHydrationWarning={true}
+            className="flex flex-col gap-2 "
+          >
             <h1 className="text-4xl md:text-5xl lg:text-5xl  md:text-start text-center font-normal font-serif text-yellow-900 tracking-wide leading-snug">
               The leading mental health consultation center for you
             </h1>
@@ -30,7 +35,12 @@ export default function WhyUs() {
             </p>
           </div>
         </div>
-        <div className=" ">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="200"
+          suppressHydrationWarning={true}
+          className=" overflow-hidden"
+        >
           <Image
             className="rounded-xl"
             src="/images/counseling4.png"
@@ -41,7 +51,12 @@ export default function WhyUs() {
         </div>
       </div>
       <div className="flex flex-col gap-10 sm:flex-row justify-around items-center">
-        <div className=" flex flex-col gap-4">
+        <div
+          data-aos="fade-right"
+          data-aos-delay="200"
+          suppressHydrationWarning={true}
+          className=" flex flex-col gap-4"
+        >
           <div className="flex items-center gap-2">
             <BookCheck
               size={36}
@@ -70,7 +85,12 @@ export default function WhyUs() {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 items-center bg-gradient-to-tr from-orange-900 to-black opacity-90 text-white px-10">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          suppressHydrationWarning={true}
+          className="flex gap-4 items-center bg-gradient-to-tr from-orange-900 to-black opacity-90 text-white px-10"
+        >
           <div className="border-r-2 pr-4">
             <Brain
               size={60}

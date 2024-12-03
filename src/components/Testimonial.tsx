@@ -52,7 +52,12 @@ export default function Testimonial() {
           What people says about us!
         </h1>
       </div>
-      <div className="w-full flex items-center justify-center my-20 p-2">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        suppressHydrationWarning={true}
+        className="w-full flex items-center justify-center my-20 p-2"
+      >
         <Carousel
           opts={{
             align: "start",
