@@ -44,8 +44,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black opacity-60"></div>
 
         {/* Content */}
-        <div className=" relative z-10 gap-10 flex flex-col m-5 items-center justify-center  h-full text-white">
-          <h1 className="text-3xl leading-loose md:text-4xl  font-serif font-bold text-center text-pink-50 ">
+        <div className="pt-5 relative z-10 gap-10 flex flex-col m-5 items-center justify-center  h-full text-white">
+          <h1 className="text-3xl md:leading-loose md:text-4xl  font-serif font-bold text-center text-pink-50 ">
             PsycheMaster&apos;s Epilepsy <br />
             Support Initiative
           </h1>
@@ -62,11 +62,24 @@ export default function Hero() {
               Reach out today and take the first step towards a stronger,
               more resilient you!
             </p>
-            <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
-              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 max-h-12 max-w-44 rounded">
-                Book Appointment
-              </button>
-            </Link>
+            <div className="pt-5 flex flex-col-reverse md:flex-row items-center gap-3">
+              <Link href="https://forms.gle/bnpshu7fa6cTqa526" target="_blank">
+                <button className="border-2 border-indigo-600 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 max-h-13 rounded">
+                  Book Appointment
+                </button>
+              </Link>
+              <Link
+                href="https://chat.whatsapp.com/KP90vTFesp7J2wjvIDMzpX"
+                target="_blank"
+              >
+                <button
+                  className=" text-white px-4 py-3 max-h-13 text-center font-semibold rounded  border-2
+                   border-indigo-600 hover:bg-indigo-600"
+                >
+                  Join WhatsApp Community
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

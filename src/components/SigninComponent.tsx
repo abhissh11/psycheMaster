@@ -4,8 +4,14 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BASE_URL } from "@/constants/config";
+import { useAppDispatch } from "@/lib/hooks";
+import { signIn } from "@/app/redux/auth/authSlice";
+import { useRouter } from "next/navigation";
 
 export default function AdminSignin() {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -50,6 +56,9 @@ export default function AdminSignin() {
           password: "",
           apiKey: "",
         });
+        const userEmail = formData.email;
+        dispatch(signIn(userEmail));
+        router.push("/admin-dashboard");
       } else {
         const data = await response.json();
         toast.error(data.message || data.error || "Signin failed.");

@@ -75,7 +75,7 @@ export default function Header() {
                   isScrolled || showMenu || !isHomePage
                     ? " text-indigo-700"
                     : " text-white font-normal"
-                } font-serif text-base font-light tracking-wider flex items-center gap-3`}
+                } font-serif text-base text-center font-light tracking-wider flex items-center gap-3`}
               >
                 Mindful Living | Flourishing Together
               </h3>

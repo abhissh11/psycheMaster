@@ -35,7 +35,7 @@ export default function Counselors() {
           {counsels.map((counsel) => (
             <div
               key={counsel.id}
-              data-aos="fade-right"
+              data-aos="fade-up"
               suppressHydrationWarning={true}
               data-aos-delay="200"
               className="group overflow-hidden cursor-pointer flex flex-col gap-1 pb-2 bg-indigo-50 shadow-sm shadow-indigo-200 rounded-xl"

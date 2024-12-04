@@ -45,7 +45,7 @@ export default function ServicesComponet() {
         {services.map((sv) => (
           <div
             key={sv.title}
-            data-aos="fade-right"
+            data-aos="fade-up"
             suppressHydrationWarning={true}
             data-aos-delay="200"
             className="animated-image flex flex-col gap-3 text-center items-center justify-center bg-white w-full md:w-[45%] lg:w-[20%] h-64 rounded-xl cursor-pointer"

@@ -35,4 +35,7 @@ export function middleware(request: NextRequest) {
     response.headers.set("Access-Control-Allow-Credentials", "true");
 
     return response;
+
+
+
 }
