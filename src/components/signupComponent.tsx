@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BASE_URL } from "@/constants/config";
+import Link from "next/link";
 
 export default function AdminSignup() {
   const [formData, setFormData] = useState({
@@ -142,6 +143,12 @@ export default function AdminSignup() {
             Sign Up
           </button>
         </form>
+        <h2 className="text-black py-2">
+          Already registered?{" "}
+          <span className="hover:underline">
+            <Link href="/auth/signin">Signin</Link>
+          </span>
+        </h2>
       </div>
     </div>
   );

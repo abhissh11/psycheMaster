@@ -7,6 +7,7 @@ import { BASE_URL } from "@/constants/config";
 import { useAppDispatch } from "@/lib/hooks";
 import { signIn } from "@/app/redux/auth/authSlice";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function AdminSignin() {
   const router = useRouter();
@@ -17,6 +18,8 @@ export default function AdminSignin() {
     password: "",
     apiKey: "",
   });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -38,41 +41,49 @@ export default function AdminSignin() {
       return;
     }
 
+    setIsLoading(true);
+
     try {
+      console.log("Sending sign-in request with data:", formData);
+
       const response = await fetch(`${BASE_URL}/auth/signin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-          apiKey: formData.apiKey,
-        }),
+        body: JSON.stringify(formData),
+        credentials: "include",
       });
 
-      if (response.ok) {
-        toast.success("Signed in successfully!");
-        setFormData({
-          email: "",
-          password: "",
-          apiKey: "",
-        });
-        const userEmail = formData.email;
-        dispatch(signIn(userEmail));
-        router.push("/admin-dashboard");
-      } else {
-        const data = await response.json();
-        toast.error(data.message || data.error || "Signin failed.");
+      if (!response.ok) {
+        const errorData = await response.json();
+        // console.error("API Error:", errorData);
+        toast.error(errorData.message || "Sign-in failed.");
+        return;
       }
-    } catch (err) {
-      console.error("Error during signin:", err);
-      toast.error(`An unexpected error occurred.`);
+
+      const data = await response.json();
+      console.log("Sign-in successful, API response:", data);
+
+      // Dispatch the user email to Redux store
+      dispatch(signIn(formData.email));
+
+      // Clear form data and redirect to the admin dashboard
+      setFormData({ email: "", password: "", apiKey: "" });
+      toast.success("Signed in successfully!");
+
+      setTimeout(() => {
+        router.push("/admin-dashboard");
+      }, 100);
+    } catch (error) {
+      console.error("Error during sign-in:", error);
+      toast.error("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="min-h-[70svh] md:my-10 w-full flex items-center justify-center">
-      <div className="w-full  md:max-w-md p-6 bg-indigo-100 shadow-lg rounded-xl">
-        {/* Toast Container */}
+      <div className="w-full md:max-w-md p-6 bg-indigo-100 shadow-lg rounded-xl">
         <ToastContainer position="top-right" autoClose={3000} theme="colored" />
 
         <form onSubmit={handleSubmit}>
@@ -132,11 +143,20 @@ export default function AdminSignin() {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            disabled={isLoading}
+            className={`w-full py-2 px-4 ${
+              isLoading ? "bg-gray-400" : "bg-indigo-600 hover:bg-indigo-700"
+            } text-white font-medium rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500`}
           >
-            Sign In
+            {isLoading ? "Signing in..." : "Sign In"}
           </button>
         </form>
+        <h2 className="text-black py-2">
+          Haven&apos;t registered yet?{" "}
+          <span className="hover:underline">
+            <Link href="/auth/signup">Signup</Link>
+          </span>
+        </h2>
       </div>
     </div>
   );

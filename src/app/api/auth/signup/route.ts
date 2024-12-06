@@ -1,7 +1,6 @@
 import { connectToDatabase } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import crypto from "crypto";
 import { User } from "@/lib/schema";
 
 // Ensure API key is defined at runtime
@@ -14,22 +13,18 @@ export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
 
-        console.log('Received request body:', JSON.stringify(body));
+        console.log("Received request body:", JSON.stringify(body));
 
         // Validate API Key
-        const apiKeyBuffer = Buffer.from(VALID_API_KEY!, "utf-8");
-        const bodyApiKeyBuffer = Buffer.from(body.apiKey || "", "utf-8");
-
-        console.log('Validating API key...');
-        if (!body.apiKey || bodyApiKeyBuffer.length !== apiKeyBuffer.length || !crypto.timingSafeEqual(apiKeyBuffer, bodyApiKeyBuffer)) {
-            console.log('API key validation failed');
+        if (!body.apiKey || body.apiKey !== VALID_API_KEY) {
+            console.log("API key validation failed");
             return NextResponse.json(
                 { message: "Invalid API Key!" },
                 { status: 403 }
             );
         }
 
-        console.log('API key validated successfully');
+        console.log("API key validated successfully");
 
         // Validate Input
         if (!body.email || !body.password) {
@@ -68,6 +63,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
+        // Hash the password
         const hashedPassword = await bcrypt.hash(body.password, 10);
 
         // Create New User
@@ -78,6 +74,8 @@ export async function POST(req: NextRequest) {
         };
 
         const result = await db.collection<User>("users").insertOne(newUser);
+
+        console.log("User created successfully");
 
         // Return Success Response
         return NextResponse.json(
