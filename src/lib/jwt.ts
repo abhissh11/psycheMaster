@@ -1,4 +1,4 @@
-import { SignJWT, jwtVerify, JWTPayload } from "jose";
+import { SignJWT, jwtVerify } from "jose";
 
 const isProduction = process.env.NODE_ENV === "production";
 const JWT_SECRET = process.env.JWT_SECRET_KEY || (isProduction ? "" : "development_secret_12345");
