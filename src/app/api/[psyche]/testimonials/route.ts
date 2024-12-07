@@ -25,6 +25,7 @@ export async function POST(req: NextRequest) {
             await verifyJWTToken(token);
 
         } catch (error) {
+            console.log("Error while uploading testimonial: ", error);
             return NextResponse.json(
                 { error: "Invalid or expired token" },
                 { status: 403 }
@@ -63,7 +64,7 @@ export async function POST(req: NextRequest) {
 
 //GET Testimonials
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         const { db } = await connectToDatabase();
 
@@ -100,6 +101,8 @@ export async function DELETE(req: NextRequest) {
             await verifyJWTToken(token);
 
         } catch (error) {
+            console.log("Error while deleting testimonial: ", error);
+
             return NextResponse.json(
                 { error: "Invalid or expired token" },
                 { status: 403 }
