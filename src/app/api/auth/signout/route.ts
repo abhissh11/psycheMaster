@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export const config = {
     runtime: "edge", // Edge runtime for compatibility
 };
 
 // Sign-out route
-export async function POST(req: NextRequest) {
+export async function POST() {
     try {
         // Clear the token cookie
         const response = NextResponse.json(
