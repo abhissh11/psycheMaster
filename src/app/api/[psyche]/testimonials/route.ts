@@ -1,6 +1,7 @@
 import { connectToDatabase } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 import { verifyJWTToken } from "@/lib/jwt";
+import { ObjectId } from "mongodb";
 
 export const config = {
     runtime: "edge",
@@ -62,13 +63,17 @@ export async function POST(req: NextRequest) {
 }
 
 
-//GET Testimonials
-
+// GET Testimonials
 export async function GET() {
     try {
         const { db } = await connectToDatabase();
 
-        const testimonials = await db.collection("testimonials").find().toArray();
+        // Fetch testimonials and sort by createdAt in descending order (newest first)
+        const testimonials = await db
+            .collection("testimonials")
+            .find()
+            .sort({ createdAt: -1 }) // -1 for descending order
+            .toArray();
 
         return NextResponse.json(
             { testimonials },
@@ -85,9 +90,11 @@ export async function GET() {
 
 
 
-// Testimonial DELETE route 
+
+// Testimonial DELETE route
 export async function DELETE(req: NextRequest) {
     try {
+        // Get the token from cookies
         const token = req.cookies.get("token")?.value;
 
         if (!token) {
@@ -99,30 +106,29 @@ export async function DELETE(req: NextRequest) {
 
         try {
             await verifyJWTToken(token);
-
         } catch (error) {
-            console.log("Error while deleting testimonial: ", error);
-
+            console.error("Error while verifying JWT token:", error);
             return NextResponse.json(
                 { error: "Invalid or expired token" },
                 { status: 403 }
             );
         }
 
-
+        // Get testimonial ID from request body
         const { testimonialId } = await req.json();
 
-        if (!testimonialId) {
+        if (!testimonialId || typeof testimonialId !== "string") {
             return NextResponse.json(
-                { error: "Testimonial ID is required" },
+                { error: "Testimonial ID must be a valid string" },
                 { status: 400 }
             );
         }
 
+        // Connect to the database
         const { db } = await connectToDatabase();
 
         // Delete the testimonial by its ID
-        const result = await db.collection("testimonials").deleteOne({ _id: testimonialId });
+        const result = await db.collection("testimonials").deleteOne({ _id: new ObjectId(testimonialId) });
 
         if (result.deletedCount === 0) {
             return NextResponse.json(
@@ -136,6 +142,7 @@ export async function DELETE(req: NextRequest) {
             { message: "Testimonial deleted successfully" },
             { status: 200 }
         );
+
     } catch (error) {
         console.error("Error deleting testimonial:", error);
         return NextResponse.json(
