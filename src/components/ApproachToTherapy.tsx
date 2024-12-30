@@ -17,7 +17,7 @@ export default function ApproachToTherapy() {
           stress to addressing feelings of isolation or stigma, our tailored
           counseling services are designed to provide compassionate support
           every step of the way. At our core, we believe that no one should face
-          these challenges alone. Let's work together to nurture mental and
+          these challenges alone. Let&apos;s work together to nurture mental and
           emotional strength, one step at a time.
         </p>
       </div>

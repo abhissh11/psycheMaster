@@ -39,8 +39,8 @@ export default function About() {
               {" "}
               <br />
             </span>{" "}
-            Let's work together to nurture mental and emotional strength, one
-            step at a time.
+            Let&apos;s work together to nurture mental and emotional strength,
+            one step at a time.
           </p>
         </div>
       </div>
