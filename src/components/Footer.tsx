@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 export default function Footer() {
   return (
-    <div className="px-4 md:px-10 lg:px-10 py-10 gray-bg ">
+    <div className="px-4 md:px-10 lg:px-10 py-10 bg-base ">
       <div className="flex flex-col md:flex-row gap-10 justify-between items-end md:items-center px-10 pb-10 ">
         <div className=" ">
           <Link href="/" className="flex items-center gap-4">
@@ -20,7 +20,7 @@ export default function Footer() {
               <h1 className=" text-white font-serif text-xl font-semibold tracking-wider flex items-center gap-3">
                 PsycheMaster
               </h1>
-              <p className="text-white text-xs font-serif font-extralight tracking-wide">
+              <p className="text-white text-xs font-serif font-extralight tracking-wider">
                 Mindful Living <br /> Flourishing Together
               </p>
             </div>
@@ -44,9 +44,9 @@ export default function Footer() {
           <div className="text-center"></div>
         </div>
       </div>
-      <div className="md:text-left text-right py-5 px-10 border-b border-orange-900">
+      <div className="md:text-left text-right py-5 px-10 border-b border-indigo-950">
         <Link href="/auth/signin">
-          <button className="px-4 py-1 text-white bg-orange-950 border-2 border-orange-950 hover:bg-yellow-950 rounded">
+          <button className="px-4 py-1 text-white bg-base border border-purple-950 hover:bg-purple-950 rounded">
             Signin
           </button>
         </Link>

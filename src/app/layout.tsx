@@ -6,6 +6,7 @@ import { Lora } from "next/font/google";
 import AOSProvider from "@/components/AosProvider";
 import Footer from "@/components/Footer";
 import ReduxProvider from "./providers/storeProvider";
+import AdBanner from "@/components/AdBanner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

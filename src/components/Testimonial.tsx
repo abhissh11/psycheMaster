@@ -1,93 +1,101 @@
-import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
-import { Card, CardContent } from "./ui/card";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+// Define the type for a testimonial
+interface Testimonial {
+  _id: string;
+  name: string;
+  testimonial: string;
+  createdAt: string;
+}
 
 export default function Testimonial() {
-  const acknowledgements = [
-    {
-      id: 1,
-      name: "Alice Johnson",
-      feedback:
-        "The service was exceptional! The team went above and beyond to ensure my needs were met. Highly recommend to everyone!",
-    },
-    {
-      id: 2,
-      name: "Michael Lee",
-      feedback:
-        "A seamless experience from start to finish. Professional, efficient, and very attentive to customer concerns. Absolutely fantastic!",
-    },
-    {
-      id: 3,
-      name: "Sophia Ramirez",
-      feedback:
-        "I am so impressed with the quality of support. They truly care about their customers and it shows in their work. An outstanding experience! The attention to detail and customer care were top-notch. Truly exceeded my expectations.",
-    },
-    {
-      id: 4,
-      name: "James Carter",
-      feedback:
-        "Quick and reliable service. The team’s dedication and expertise made all the difference. I will definitely be returning!",
-    },
-    {
-      id: 5,
-      name: "Emily Davis",
-      feedback:
-        "An outstanding experience! The attention to detail and customer care were top-notch. Truly exceeded my expectations.",
-    },
-  ];
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/psyche/testimonials"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch testimonials");
+        }
+        const data = await response.json();
+        setTestimonials(data.testimonials);
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
-    <div className="min-h-[50vh] max-w-[100vw] bg-indigo-100 px-4 md:px-10 lg:px-10 py-20 overflow-hidden">
+    <div className="min-h-[50vh] max-w-[100vw] bg-base px-4 lg:px-10 py-20 overflow-hidden">
       <div className="flex flex-col gap-10 justify-center items-center">
-        <h1 className="text-3xl text-indigo-600 flex gap-4 items-center font-normal font-mono text-center">
-          Our Testimonials
+        <h1 className="text-3xl text-white flex gap-4 items-center font-bold font-mono text-center">
+          TESTIMONIALS
         </h1>
-        <h1 className="text-2xl md:text-3xl lg:text-6xl font-normal font-serif text-yellow-900 tracking-wide leading-snug text-center">
-          What people says about us!
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal font-serif text-white tracking-wide leading-snug text-center">
+          What people say about us!
         </h1>
       </div>
       <div
-        data-aos="fade-up"
-        data-aos-delay="200"
+        data-aos="fade-in"
+        data-aos-easing="ease-in-sine"
+        data-aos-delay="100"
         suppressHydrationWarning={true}
         className="w-full flex items-center justify-center my-20 p-2"
       >
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="w-full max-w-[80%]"
-        >
-          <CarouselContent className="">
-            {acknowledgements.map((ack) => (
-              <CarouselItem
-                key={ack.id}
-                className="md:basis-1/2 lg:basis-1/3 w-full"
-              >
-                <div className="p-1">
-                  <Card className="border-yellow-950 gray-bg shadow-lg">
-                    <CardContent className="flex flex-col gap-4 aspect-square items-center justify-center p-4">
-                      <p className="text-base text-gray-200 font-serif font-normal tracking-wide">
-                        &quot;{ack.feedback}&quot;
-                      </p>
-                      <h1 className="text-white text-sm font-serif font-semibold">
-                        - {ack.name}
-                      </h1>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <div className="relative flex w-full sm:w-3/4 h-[16rem] justify-center items-center shadow-md rounded-xl bg-gradient-to-tr bg-chase p-10">
+          {/* Check if testimonials are loaded */}
+          {testimonials.length > 0 ? (
+            <div className="absolute md:px-10 md:w-3/4 inset-0 flex flex-col justify-center items-center gap-4 transition-all duration-500 ease-in-out">
+              <p className="text-slate-100 text-start text-sm sm:text-base md:text-lg px-4">
+                {testimonials[currentIndex].testimonial}
+              </p>
+              <h1 className="text-white text-lg font-bold text-end">
+                {` ~ ${testimonials[currentIndex].name}`}
+              </h1>
+            </div>
+          ) : (
+            <p className="text-slate-100 text-center">
+              Loading testimonials...
+            </p>
+          )}
+
+          {/* Navigation Controls */}
+          {testimonials.length > 0 && (
+            <div className="absolute bottom-4 md:bottom-10 md:right-20 flex gap-2">
+              <ChevronLeft
+                onClick={handlePrev}
+                size={32}
+                className="text-white p-2 border border-white rounded-full cursor-pointer hover:bg-white hover:text-purple-900 transition"
+              />
+              <ChevronRight
+                onClick={handleNext}
+                size={32}
+                className="text-white p-2 border border-white rounded-full cursor-pointer hover:bg-white hover:text-purple-900 transition"
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

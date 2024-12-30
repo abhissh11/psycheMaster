@@ -68,11 +68,11 @@ export async function GET() {
     try {
         const { db } = await connectToDatabase();
 
-        // Fetch testimonials and sort by createdAt in descending order (newest first)
+        // Fetch testimonials (newest first)
         const testimonials = await db
             .collection("testimonials")
             .find()
-            .sort({ createdAt: -1 }) // -1 for descending order
+            .sort({ createdAt: -1 })
             .toArray();
 
         return NextResponse.json(

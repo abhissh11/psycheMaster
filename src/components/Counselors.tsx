@@ -23,22 +23,23 @@ export default function Counselors() {
     },
   ];
   return (
-    <div className="min-h-fit flex flex-col gap-10 justify-center bg-indigo-50 px-4 md:px-10 lg:px-20 py-10 md:py-20 ">
-      <h1 className="text-3xl font-normal font-mono text-center">
-        Our Counselors
+    <div className="min-h-fit flex flex-col gap-6 justify-center bg-white px-4 md:px-10 lg:px-20 py-10 ">
+      <h1 className="text-purple-900 text-3xl font-bold font-mono text-center">
+        OUR COUNSELORS
       </h1>
       <div className="flex flex-col justify-center gap-6 ">
-        <h1 className="text-4xl md:text-5xl lg:text-5xl text-center font-normal font-serif text-yellow-900 tracking-wide leading-snug">
+        <h1 className="text-3xl md:text-3xl lg:text-4xl text-center font-normal font-serif text-purple-900 tracking-wide leading-snug">
           Meet our specialists counselors
         </h1>
-        <div className="my-20 flex gap-10 flex-col md:flex-row flex-wrap justify-center items-center">
+        <div className="my-10 flex gap-10 flex-col md:flex-row flex-wrap justify-center items-center">
           {counsels.map((counsel) => (
             <div
               key={counsel.id}
-              data-aos="fade-up"
+              data-aos="fade-in"
+              data-aos-easing="ease-in-sine"
               suppressHydrationWarning={true}
-              data-aos-delay="200"
-              className="group overflow-hidden cursor-pointer flex flex-col gap-1 pb-2 bg-indigo-50 shadow-sm shadow-indigo-200 rounded-xl"
+              data-aos-delay="100"
+              className="group overflow-hidden cursor-pointer flex flex-col gap-1 pb-2 bg-purple-100 shadow-sm shadow-purple-200 rounded-xl"
             >
               <div className="overflow-hidden">
                 <Image
@@ -49,10 +50,10 @@ export default function Counselors() {
                   className="rounded-t-xl transform transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <p className="text-sm text-start font-normal text-gray-900 px-4">
+              <p className="text-sm text-start font-normal text-purple-900 px-4">
                 {counsel.designation}
               </p>
-              <h1 className="text-xl text-indigo-700 font-bold pl-3">
+              <h1 className="text-xl text-purple-900 font-bold pl-3">
                 {counsel.name}
               </h1>
             </div>

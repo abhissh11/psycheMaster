@@ -1,84 +1,100 @@
-import Image from "next/image";
-import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./ui/accordion";
+"use client";
 
-export default function Faqs() {
+import React, { useState } from "react";
+
+const Faq: React.FC = () => {
+  const faqs = [
+    {
+      id: 1,
+      question: "How can I reset my password?",
+      answer:
+        "To reset your password, go to the login page, click 'Forgot Password,' and follow the instructions sent to your email.",
+    },
+    {
+      id: 2,
+      question: "How do I update my billing information?",
+      answer:
+        "To update your billing info, log in to your account, navigate to the 'Billing' section, and update your payment details.",
+    },
+    {
+      id: 3,
+      question: "How can I contact customer support?",
+      answer:
+        "You can contact customer support via email at support@example.com or call us at +1-800-555-1234.",
+    },
+    {
+      id: 4,
+      question: "How do I delete my account?",
+      answer:
+        "To delete your account, go to 'Settings,' click 'Delete Account,' and confirm the deletion process.",
+    },
+  ];
+
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const toggleFaq = (id: number) => {
+    setActiveFaq((prevId) => (prevId === id ? null : id));
+  };
+
   return (
-    <div className="min-h-fit bg-indigo-100 overflow-hidden">
-      <div className="flex flex-col lg:flex-row gap-10">
-        {/* Image Section */}
-        <div className="gray-bg flex justify-center items-center flex-grow-0 flex-shrink-0">
-          <div className="w-full md:[580x] lg:w-[630px] ">
-            <Image
-              src="/images/soulpuzzle.jpg"
-              width={500}
-              height={500}
-              alt="Soul-Puzzle-img"
-              className="object-cover h-full w-full"
-            />
-          </div>
+    <section className="py-24 bg-white">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16">
+          <h2 className="text-4xl font-manrope text-center font-bold text-purple-900 leading-[3.25rem]">
+            Commonly Asked Queries
+          </h2>
         </div>
-
-        {/* Accordion Section */}
-        <div className="py-10 flex flex-col items-center h-full flex-grow">
-          <h1 className="pl-10 text-4xl md:text-5xl lg:text-5xl text-start font-normal font-serif text-yellow-900 tracking-wide leading-snug">
-            Frequently Asked Questions
-          </h1>
-          <div className="w-2/3 my-20 overflow-y-auto">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-yellow-900 text-xl font-serif font-normal">
-                  What is your privacy policy for counseling sessions?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Your privacy is our top priority. All sessions are
-                  confidential, and we strictly adhere to ethical guidelines to
-                  protect your information. Without your explicit consent, no
-                  details about your sessions will be shared with anyone.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-yellow-900 text-xl font-serif font-normal">
-                  How can I prepare for my first session?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Simply come with an open mind. You can jot down any specific
-                  issues you&apos;d like to discuss or goals you want to
-                  achieve. This will help make the session more focused and
-                  productive.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-yellow-900 text-xl font-serif font-normal">
-                  What are the qualifications of your counselors?
-                </AccordionTrigger>
-                <AccordionContent>
-                  All our counselors are certified professionals with
-                  specialized training in psychology, counseling, and therapy.
-                  They bring years of experience in helping clients overcome
-                  challenges and achieve mental wellness.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-yellow-900 text-xl font-serif font-normal">
-                  How many sessions will I need?
-                </AccordionTrigger>
-                <AccordionContent>
-                  The number of sessions varies for each individual. Some
-                  clients feel better after a few sessions, while others prefer
-                  ongoing support. During your first session, your counselor
-                  will help outline a plan based on your needs and goals.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
+        <div className="space-y-6">
+          {faqs.map((faq) => (
+            <div
+              key={faq.id}
+              className={`border border-solid border-gray-300 p-4 rounded-xl transition duration-500 ${
+                activeFaq === faq.id
+                  ? "bg-indigo-50 border-2 border-purple-600"
+                  : "bg-white"
+              }`}
+            >
+              <button
+                className="flex items-center justify-between w-full text-left text-lg font-normal leading-8 text-gray-900 transition duration-500 group"
+                onClick={() => toggleFaq(faq.id)}
+              >
+                <h5
+                  className={`${
+                    activeFaq === faq.id
+                      ? "font-medium text-purple-900"
+                      : "font-normal text-gray-900"
+                  }`}
+                >
+                  {faq.question}
+                </h5>
+                <svg
+                  className={`w-6 h-6 transition-transform duration-500 bg-purple-800 text-white rounded-full ${
+                    activeFaq === faq.id ? "rotate-180" : "rotate-0"
+                  }`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              {activeFaq === faq.id && (
+                <div className="mt-4 text-base text-indigo-900">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Faq;

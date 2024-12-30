@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import ApproachToTherapy from "@/components/ApproachToTherapy";
 import Counselors from "@/components/Counselors";
 import Faqs from "@/components/Faqs";
 import Hero from "@/components/Hero";
@@ -17,6 +18,7 @@ export default function Home() {
         <WhyUs />
         <Testimonial />
         <Counselors />
+        <ApproachToTherapy />
         <Faqs />
       </main>
     </div>

@@ -10,7 +10,7 @@
   --secondary-text: #3b82f6; /* Bright blue */
   --heading-color: #1d4ed8; /* Medium blue */
   --link-color: #2563eb; /* Slightly darker medium blue */
-  /* --link-hover-color: #93c5fd; Lighter blue for hover */
+  /* --link-hover-color: #93c5fd; Lighter blue for hover #5b3128 */
   --gray-background: #5b3128;
 }
 html {
@@ -89,4 +89,17 @@ li:hover {
 .gray-bg {
   background-color: var(--gray-background);
   color: white;
+}
+
+.bg-base {
+  background: rgb(72, 50, 119);
+}
+.bg-chase {
+  background: rgb(89 63 146);
+}
+.bg-mesh {
+  background: rgb(58, 41, 94);
+}
+.bt-border {
+  border-color: rgb(49, 34, 81);
 }
