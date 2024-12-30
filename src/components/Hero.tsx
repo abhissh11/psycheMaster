@@ -13,8 +13,8 @@ export default function Hero() {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
   return (
-    <div className="relative mt-20 flex justify-center items-start h-screen flex-wrap overflow-hidden w-full bg-base">
-      <ScrollProgress className="top-[80px] md:top-[72px]" />
+    <div className="relative mt-20 py-8 flex justify-center items-start h-fit flex-wrap overflow-hidden w-full bg-base">
+      <ScrollProgress className="top-[78px] md:top-[72px]" />
 
       <div className="px-4 pt-16 flex flex-col gap-16 justify-center items-center">
         <div className="flex flex-col items-center gap-8">
