@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -6,7 +7,6 @@ import { Lora } from "next/font/google";
 import AOSProvider from "@/components/AosProvider";
 import Footer from "@/components/Footer";
 import ReduxProvider from "./providers/storeProvider";
-import AdBanner from "@/components/AdBanner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -47,6 +47,7 @@ export default function RootLayout({
             <AOSProvider>
               <Header />
               {children}
+              <Analytics />
               <Footer />
             </AOSProvider>
           </ReduxProvider>

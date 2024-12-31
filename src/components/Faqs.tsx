@@ -37,7 +37,7 @@ const Faq: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-white">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-4xl font-manrope text-center font-bold text-purple-900 leading-[3.25rem]">
@@ -50,7 +50,7 @@ const Faq: React.FC = () => {
               key={faq.id}
               className={`border border-solid border-gray-300 p-4 rounded-xl transition duration-500 ${
                 activeFaq === faq.id
-                  ? "bg-indigo-50 border-2 border-purple-600"
+                  ? "bg-indigo-50 border border-purple-600"
                   : "bg-white"
               }`}
             >
