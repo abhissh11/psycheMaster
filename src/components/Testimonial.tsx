@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { BASE_URL } from "./../constants/config";
 
 // Define the type for a testimonial
 interface Testimonial {
@@ -18,9 +19,7 @@ export default function Testimonial() {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/psyche/testimonials"
-        );
+        const response = await fetch(`${BASE_URL}/psyche/testimonials`);
         if (!response.ok) {
           throw new Error("Failed to fetch testimonials");
         }

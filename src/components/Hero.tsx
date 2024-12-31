@@ -13,7 +13,7 @@ export default function Hero() {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
   return (
-    <div className="relative mt-20 py-8 flex justify-center items-start h-fit flex-wrap overflow-hidden w-full bg-base">
+    <div className="relative mt-20 py-6 flex justify-center items-center  sm:items-start h-screen sm:h-fit flex-wrap overflow-hidden w-full bg-base">
       <ScrollProgress className="top-[78px] md:top-[72px]" />
 
       <div className="px-4 pt-16 flex flex-col gap-16 justify-center items-center">
@@ -21,12 +21,12 @@ export default function Hero() {
           <h1 className="text-4xl font-bold text-white text-center">
             PsycheMaster's Epilepsy Support Initiative
           </h1>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-center text-white">
               Empowering Epilepsy Warriors & <br />
               Their Loved Ones
             </h2>
-            <p className="text-lg font-normal text-white">
+            <p className="text-lg font-normal text-center text-white">
               Reach out today and take the first step towards a stronger, more
               resilient you!
             </p>

@@ -8,11 +8,11 @@ export default function About() {
         {/* Image Div */}
         <div className="flex justify-center items-center w-full md:w-1/3">
           <Image
-            src="/images/master.png"
+            src="/images/psychemasters-card.jpg"
             height={220}
             width={220}
             alt="PsycheMaster's Logo"
-            className="rounded-2xl"
+            className="rounded-2xl shadow-md shadow-purple-800 hover:shadow-xl hover:shadow-purple-800 transition-all"
           />
         </div>
 

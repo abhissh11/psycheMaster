@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 export default function Footer() {
   return (
-    <div className="px-4 md:px-10 lg:px-10 py-10 bg-base ">
+    <div className="px-4 md:px-10 lg:px-10 py-10 bg-chase ">
       <div className="flex flex-col md:flex-row gap-10 justify-between items-end md:items-center px-10 pb-10 ">
         <div className=" ">
           <Link href="/" className="flex items-center gap-4">

@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import ApproachToTherapy from "@/components/ApproachToTherapy";
+import ContactComponent from "@/components/ContactComponent";
 import Counselors from "@/components/Counselors";
 import Faqs from "@/components/Faqs";
 import Hero from "@/components/Hero";
@@ -20,6 +21,7 @@ export default function Home() {
         <Counselors />
         <ApproachToTherapy />
         <Faqs />
+        <ContactComponent />
       </main>
     </div>
   );
