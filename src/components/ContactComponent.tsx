@@ -17,7 +17,7 @@ export default function ContactComponent() {
             <div className="flex gap-2 items-center mb-6">
               <Mail
                 size={44}
-                className="text-2xl text-white bg-blue-600 p-2 rounded"
+                className="text-2xl text-white bg-purple-950 p-2 rounded"
               />
               <div className="">
                 <p className="text-xl font-semibold text-gray-200">
@@ -37,7 +37,7 @@ export default function ContactComponent() {
                 {" "}
                 <Icon
                   icon="uim:whatsapp"
-                  className="w-12 h-12 rounded text-white bg-blue-600 p-2"
+                  className="w-12 h-12 rounded text-white bg-purple-950 p-2"
                 />
               </span>{" "}
               <div className="">
@@ -57,7 +57,7 @@ export default function ContactComponent() {
               <span>
                 <Instagram
                   size={46}
-                  className="text-white p-2 bg-blue-600 text-2xl rounded"
+                  className="text-white p-2 bg-purple-950 text-2xl rounded"
                 />
               </span>{" "}
               <div className="">
